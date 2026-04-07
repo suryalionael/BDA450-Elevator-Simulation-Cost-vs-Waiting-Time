@@ -78,8 +78,14 @@ def run_scenario(num_elevators: int, traffic_scale: float,
     all_records = []
     total_unserved = 0
 
+    # Build a scenario-unique offset so seeds never collide across scenarios.
+    # e.g. (elev=1, scale=0.8) → offset 1080
+    #      (elev=2, scale=1.0) → offset 2100
+    #      (elev=3, scale=1.2) → offset 3120
+    scenario_offset = num_elevators * 1000 + int(round(traffic_scale * 100))
+
     for rep in range(n_reps):
-        seed = base_seed + rep
+        seed = base_seed + scenario_offset + rep
         rng  = np.random.default_rng(seed)
         passengers = load_passengers(ON_COUNTS_PATH, OFF_COUNTS_PATH,
                                      traffic_scale=traffic_scale, rng=rng)
