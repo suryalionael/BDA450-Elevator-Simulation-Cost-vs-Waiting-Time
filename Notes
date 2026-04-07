@@ -1,0 +1,59 @@
+This is **much better overall**. I’d call this **submission-usable**, with one remaining caution.
+
+What looks good now:
+
+* **1 elevator is clearly bad**, while **2 and 3 elevators are much better**.
+* **3 elevators is now clearly better than 2** on waiting time, which is what was missing in the bad runs.
+* The **cost vs. service** plot now tells a sensible story:
+
+  * big gain from **1 → 2**
+  * smaller but real gain from **2 → 3**
+* The **fairness plots** improved a lot:
+
+  * with **2 elevators**, pass-by count drops sharply
+  * with **3 elevators**, starvation is almost gone
+* The **2-elevator histogram** now looks believable again:
+
+  * mean about **28s**
+  * P95 about **69s**
+* The **3-elevator histogram** looks very strong:
+
+  * mean about **9s**
+  * P95 about **26s**
+
+That is much closer to the believable corrected version you had earlier.
+
+The one remaining problem is still **1 elevator**:
+
+* mean wait about **182s**
+* P95 about **1410s**
+* the morning heatmap hotspot at **floor 1** is still extremely high
+* the timeline still shows a huge morning spike
+
+That is not automatically “wrong,” but it is very severe. For a course project, though, this can still be acceptable if you present it as:
+
+* **1 elevator performs poorly under peak demand**
+* **morning demand causes major congestion**
+* **2 elevators largely solves the problem**
+* **3 elevators gives premium service**
+
+So my verdict:
+
+* **Better than the dispatcher version:** yes, clearly
+* **Better than the weird regression version:** yes
+* **Good enough to submit:** yes
+* **Best recommendation supported by these charts:** **2 elevators**
+* **3 elevators:** best service, but diminishing returns
+* **1 elevator:** unacceptable under peak conditions
+
+What I would say in the report:
+
+* The system shows severe congestion with **1 elevator**, especially during morning demand peaks.
+* Adding a **second elevator** dramatically reduces average wait, tail risk, and starvation.
+* A **third elevator** further improves service, but the incremental gain is smaller relative to cost.
+* Therefore, **2 elevators is the best cost-service trade-off**, while **3 elevators is justified only if premium service is required**.
+
+One small presentation note:
+your **2-elevator timeline** and **3-elevator timeline** look good, but the **1-elevator timeline** is so extreme that it dominates visually. That is okay, but I would rely more on the histogram + boxplot + fairness + cost plot in the final report.
+
+So: **yes, this new result is strong enough, and much better than the previous bad run.**
