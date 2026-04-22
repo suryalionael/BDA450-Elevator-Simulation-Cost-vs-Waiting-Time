@@ -26,6 +26,11 @@ The objective: determine the optimal number of elevators by balancing **capital 
 | What’s the cost vs. service trade-off? | Cost vs. mean waiting time analysis |
 
 ---
+## 📄 Project Report & Presentation
+
+- 📘 [Full Report](report/ElevatorSim_Report.pdf)
+- 🎤 [Presentation Slides](report/ElevatorSim_Slides.pdf)
+---
 
 ## 🏗️ Architecture
 ```
@@ -52,6 +57,9 @@ plots (histograms, boxplots, heatmaps, etc.)
 ## 📁 Project Structure
 ```
 elevatorsim/
+├── report/
+│   ├── ElevatorSim_Report.pdf
+│   └── ElevatorSim_Slides.pdf
 ├── experiments_full.py
 ├── data_input_full.py
 ├── elevator_model_full.py
@@ -169,6 +177,24 @@ Reads `OnCounts.xlsx` and `OffCounts.xlsx` and generates per-passenger arrival e
 ![Cost vs Service](results/costvsservice.png)
 
 ---
+## 📌 Key Insights
+
+- 1 elevator leads to extreme delays (P95 > 20 minutes)
+- 2 elevators reduce wait time by ~85% with moderate cost increase
+- 3 elevators provide near-instant service but diminishing returns
+
+👉 Recommendation: 2 elevators offers the best cost-performance balance
+---
+## 💼 Business Recommendation
+
+For a 5-floor commercial building:
+
+- **Budget-constrained buildings:** 2 elevators (optimal trade-off)
+- **Premium buildings:** 3 elevators (best user experience)
+- **1 elevator is not viable** due to unacceptable wait times
+
+This simulation provides a data-driven approach to infrastructure planning decisions.
+---
 
 ## 🔧 Customization
 
@@ -214,7 +240,6 @@ Time is in decimal hours (e.g., `8.25, 8.5` = 8:15 AM to 8:30 AM).
 - Lionael Surya Dwitama
 - Chaehoon Shin
 - Margil Parekh
-- Alif Hossain
 
 ---
 
